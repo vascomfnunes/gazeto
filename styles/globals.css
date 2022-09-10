@@ -3,7 +3,7 @@
 
 html,
 body {
-  font-family: 'PT Serif', Helvetica Neue, sans-serif;
+  font-family: 'PT Serif', serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -12,10 +12,11 @@ body {
 a {
   color: #bf0024;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-p {
-  font-size: 1.05rem;
+a:hover {
+  color: #1f1e1e;
 }
 
 * {
@@ -30,10 +31,10 @@ p {
 }
 
 footer {
-  text-align: center;
+  background-color: #ddd;
   border-top: 1px solid #eee;
   font-size: 0.8rem;
   margin: 2rem auto 0;
   padding: 2rem 3rem;
-  background-color: #eee;
+  text-align: center;
 }

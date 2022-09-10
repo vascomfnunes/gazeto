@@ -1,7 +1,9 @@
+@import '../../../styles/variables.scss';
+
 .section-title {
-  color: #bf0024;
+  color: $red;
   font-size: 0.9rem;
   text-transform: uppercase;
-  font-family: Lato, sans-serif;
+  font-family: $sans-serif;
   margin: 2rem 0 0;
 }

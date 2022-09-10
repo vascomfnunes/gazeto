@@ -1,5 +1,5 @@
-import Image from '../../node_modules/next/image'
-import Link from '../../node_modules/next/link'
+import Link from 'node_modules/next/link'
+import Image from 'node_modules/next/image'
 import styles from './ArticlesGrid.module.scss'
 
 export default function ArticlesGrid(props: { articles: any }): JSX.Element {

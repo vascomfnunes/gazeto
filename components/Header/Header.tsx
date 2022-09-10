@@ -1,16 +1,9 @@
-import Image from '../../node_modules/next/image'
-import Link from '../../node_modules/next/link'
+import { todayFormattedDate } from '@/lib/utils'
+import Image from 'node_modules/next/image'
+import Link from 'node_modules/next/link'
 import styles from './Header.module.scss'
 
 export default function Header(): JSX.Element {
-  const getDate = () =>
-    new Date().toLocaleDateString('en-GB', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-
   return (
     <div className={styles['wrapper']}>
       <div className={styles['logos']}>
@@ -18,7 +11,7 @@ export default function Header(): JSX.Element {
           <a className={styles['title']}>Gazeto</a>
         </Link>
         <Link href="https://theguardian.com">
-          <a target="blank">
+          <a target="_blank">
             <Image
               src="/poweredbyguardian.png"
               height="30"
@@ -28,7 +21,9 @@ export default function Header(): JSX.Element {
           </a>
         </Link>
       </div>
-      <div className={styles['edition']}>UK Edition for {getDate()}</div>
+      <div className={styles['edition']}>
+        UK Edition for {todayFormattedDate()}
+      </div>
     </div>
   )
 }

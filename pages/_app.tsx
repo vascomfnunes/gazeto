@@ -1,6 +1,6 @@
-import Head from '../node_modules/next/head'
-import Image from '../node_modules/next/image'
-import Link from '../node_modules/next/link'
+import Head from 'node_modules/next/head'
+import Image from 'node_modules/next/image'
+import Link from 'node_modules/next/link'
 import '../styles/globals.css'
 
 function Gazeto({ Component, pageProps }): JSX.Element {
@@ -19,7 +19,7 @@ function Gazeto({ Component, pageProps }): JSX.Element {
 
       <footer>
         <Link href="https://theguardian.com">
-          <a target="blank">
+          <a target="_blank">
             <Image
               src="/poweredbyguardian.png"
               height="30"
@@ -32,17 +32,17 @@ function Gazeto({ Component, pageProps }): JSX.Element {
           <br />
           This site&apos;s content is provided by{' '}
           <Link href="https://open-platform.theguardian.com/">
-            <a target="_blank">The Guardian Open Platform</a>
+            <a target="_blank">The Guardian Open Platform.</a>
           </Link>{' '}
-          and is not affiliated with The Guardian in any way.
-          <br />
-          All content is copyrighted by The Guardian. The terms of use of The
-          Guardian Open Platform can be consulted{' '}
+          This site is not affiliated with The Guardian which has the copyright
+          to all the articles content. The terms of use to The Guardian Open
+          Platform can be read{' '}
           <Link href="https://www.theguardian.com/open-platform/terms-and-conditions">
             <a target="_blank">here</a>
           </Link>
           .<br />
-          All the content is for exclusive personal, non-commercial use.
+          All the content provided is for exclusive personal, non-commercial
+          use.
         </div>
       </footer>
     </>

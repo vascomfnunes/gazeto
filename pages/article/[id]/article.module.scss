@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .wrapper {
   max-width: 920px;
   margin: 1.8rem auto;
@@ -6,8 +8,8 @@
     margin: 2rem 0;
 
     figcaption {
-      font-family: Lato, sans-serif;
-      font-weight: 700;
+      font-family: $sans-serif;
+      font-weight: $bold;
       font-size: 0.9rem;
       margin-top: 0.5rem;
     }
@@ -27,8 +29,8 @@
 
 article {
   .section {
-    color: #bf0024;
-    font-family: Lato;
+    color: $red;
+    font-family: $sans-serif;
     text-transform: uppercase;
     font-size: 0.9rem;
   }
@@ -36,32 +38,32 @@ article {
   .byline {
     text-align: center;
     font-size: 0.8rem;
-    font-family: Lato, sans-serif;
-    font-weight: 400;
+    font-family: $sans-serif;
+    font-weight: $normal;
     margin: 2rem 0 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
     padding: 0.5rem 0;
 
     .separator {
       padding: 0 1rem;
-      color: #ddd;
+      color: $gray;
     }
 
     .author {
-      color: #bf0024;
+      color: $red;
     }
 
     .date {
-      color: #666;
+      color: $dark-gray;
     }
   }
 
   .title {
-    font-family: 'PT Serif', sans-serif !important;
+    font-family: $serif;
     font-size: 2.5rem;
     line-height: 2.5rem;
-    font-weight: 700;
+    font-weight: $bold;
     margin: 0.5rem 0 2rem;
   }
 
@@ -78,22 +80,15 @@ article {
 .body {
   padding-top: 1rem;
 
+  p {
+    font-size: 1.1rem;
+  }
+
   blockquote {
     padding: 1rem 2rem 1rem;
     position: relative;
     font-size: 1.5rem;
-    font-weight: 700px;
     text-align: center;
-  }
-
-  blockquote:before {
-    position: absolute;
-    font-family: 'FontAwesome';
-    top: 0;
-    left: 0;
-    content: "\f10d";
-    font-size: 150px;
-    color: rgba(0, 0, 0, 0.05);
   }
 
   blockquote::after {
@@ -102,9 +97,13 @@ article {
     left: 50%;
     margin-left: -100px;
     position: absolute;
-    border-bottom: 3px solid #bf0024;
+    border-bottom: 3px solid $red ;
     height: 3px;
     width: 200px;
   }
+}
 
+.the-guardian-link {
+  font-weight: $bold;
+  padding-top: 3rem;
 }

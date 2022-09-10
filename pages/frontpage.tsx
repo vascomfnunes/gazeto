@@ -1,8 +1,8 @@
-import useSWR from '../node_modules/swr/dist/index'
-import Header from '../components/Header/Header'
-import ArticlesGrid from '../components/ArticlesGrid/ArticlesGrid'
+import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
+import Header from '@/components/Header/Header'
+import Link from 'node_modules/next/link'
+import useSWR from 'node_modules/swr/dist/index'
 import styles from './frontpage.module.scss'
-import Link from '../node_modules/next/link'
 
 export default function Home(): JSX.Element {
   const { data, error } = useSWR('/api/sections', (apiURL: string) =>

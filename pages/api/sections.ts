@@ -1,7 +1,7 @@
 import {
   NextApiRequest,
   NextApiResponse
-} from '../../node_modules/next/dist/shared/lib/utils'
+} from 'node_modules/next/dist/shared/lib/utils'
 
 const handler = async (
   _req: NextApiRequest,

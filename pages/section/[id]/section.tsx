@@ -1,7 +1,7 @@
-import ArticlesGrid from '../../../components/ArticlesGrid/ArticlesGrid'
-import Header from '../../../components/Header/Header'
-import { useRouter } from '../../../node_modules/next/router'
-import useSWR from '../../../node_modules/swr/dist/index'
+import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
+import Header from '@/components/Header/Header'
+import { useRouter } from 'node_modules/next/router'
+import useSWR from 'node_modules/swr/dist/index'
 import styles from './section.module.scss'
 
 export default function Section(): JSX.Element {
