@@ -1,0 +1,110 @@
+.wrapper {
+  max-width: 920px;
+  margin: 1.8rem auto;
+
+  figure {
+    margin: 2rem 0;
+
+    figcaption {
+      font-family: Lato, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  iframe {
+    width: 100%;
+    margin: 0;
+    min-height: 450px;
+  }
+}
+
+article {
+  .section {
+    color: #bf0024;
+    font-family: Lato;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  .byline {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    margin: 2rem 0 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+
+    .separator {
+      padding: 0 1rem;
+      color: #ddd;
+    }
+
+    .author {
+      color: #bf0024;
+    }
+
+    .date {
+      color: #666;
+    }
+  }
+
+  .title {
+    font-family: 'PT Serif', sans-serif !important;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .trail-text {
+    margin: 3rem 0 1rem;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.body {
+  padding-top: 1rem;
+
+  blockquote {
+    padding: 1rem 2rem 1rem;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700px;
+    text-align: center;
+  }
+
+  blockquote:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 0;
+    left: 0;
+    content: "\f10d";
+    font-size: 150px;
+    color: rgba(0, 0, 0, 0.05);
+  }
+
+  blockquote::after {
+    content: "";
+    top: 20px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    border-bottom: 3px solid #bf0024;
+    height: 3px;
+    width: 200px;
+  }
+
+}

@@ -1,0 +1,32 @@
+.wrapper {
+  text-align: center;
+  padding: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ddd;
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+.title {
+  color: #bf0024;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: 0.3s;
+  text-align: center;
+  line-height: 3.1rem;
+  padding-right: 0.5rem;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.edition {
+  font-size: 0.8rem;
+  color: #666;
+}
