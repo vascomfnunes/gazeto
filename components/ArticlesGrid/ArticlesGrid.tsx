@@ -24,12 +24,14 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                       {article.fields.headline}
                     </h2>
                     <div>
-                      <Image
-                        src={article.fields.thumbnail}
-                        alt={article.headline}
-                        width="250"
-                        height="150"
-                        layout="responsive"></Image>
+                      {article.fields.thumbnail && (
+                        <Image
+                          src={article.fields.thumbnail}
+                          alt={article.headline}
+                          width="250"
+                          height="150"
+                          layout="responsive"></Image>
+                      )}
                       <div
                         className={styles['trail-text']}
                         dangerouslySetInnerHTML={{
