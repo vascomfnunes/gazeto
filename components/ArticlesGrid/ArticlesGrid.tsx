@@ -27,8 +27,9 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                       <Image
                         src={article.fields.thumbnail}
                         alt={article.headline}
-                        width="250"
-                        height="150"
+                        width="300"
+                        height="200"
+                        objectFit='cover'
                         layout="responsive"></Image>
                       <div
                         className={styles['trail-text']}

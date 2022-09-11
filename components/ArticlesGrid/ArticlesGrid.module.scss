@@ -1,16 +1,17 @@
 @import '../../styles/variables';
 
 .wrapper {
-  align-items: flex-end;
   column-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
 }
 
 .article {
+  align-content: space-between;
   background-color: $white;
   border-bottom: 1px solid $gray;
+  display: flex;
+  flex-wrap: wrap;
   transition: 0.3s;
   width: 31%;
 
