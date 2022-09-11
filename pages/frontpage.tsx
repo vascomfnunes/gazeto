@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
                   <a>{key}</a>
                 </Link>
               </div>
-              <ArticlesGrid articles={data[key]} />
+              <ArticlesGrid articles={data[key]} limit={5} />
             </div>
           )
         })}

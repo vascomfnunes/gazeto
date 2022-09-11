@@ -1,31 +1,63 @@
 import Link from 'node_modules/next/link'
 import Image from 'node_modules/next/image'
 import styles from './ArticlesGrid.module.scss'
+import { FunctionComponent } from 'react'
 
-export default function ArticlesGrid(props: { articles: any }): JSX.Element {
+interface IProps {
+  articles: any
+  limit?: number
+}
+
+const ArticlesGrid: FunctionComponent<IProps> = (props) => {
   return (
-    <div className={styles['wrapper']}>
-      {props.articles &&
-        props.articles.map((article: any, index: number) => (
+    <>
+      <div className={styles['wrapper']}>
+        {props.articles &&
+          props.articles.map(
+            (article: any, index: number) =>
+              props.limit > index && (
+                <Link
+                  key={index}
+                  href={`/article/${encodeURIComponent(article.apiUrl)}`}>
+                  <div className={styles['article']}>
+                    <h2 className={styles['title']}>
+                      {article.fields.headline}
+                    </h2>
+                    <div>
+                      <Image
+                        src={article.fields.thumbnail}
+                        alt={article.headline}
+                        width="250"
+                        height="150"
+                        layout="responsive"></Image>
+                      <p className={styles['trail-text']}>
+                        {article.fields.trailText}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              )
+          )}
+      </div>
+
+      {props.articles.length > props.limit && (
+        <div className={styles['more-on']}>
           <Link
-            key={index}
-            href={`/article/${encodeURIComponent(article.apiUrl)}`}>
-            <div className={styles['article']}>
-              <h2 className={styles['title']}>{article.fields.headline}</h2>
-              <div>
-                <Image
-                  src={article.fields.thumbnail}
-                  alt={article.headline}
-                  width="250"
-                  height="150"
-                  layout="responsive"></Image>
-                <p className={styles['trail-text']}>
-                  {article.fields.trailText}
-                </p>
-              </div>
-            </div>
+            href={`/section/${
+              props.articles[0].sectionId
+            }?sectionName=${encodeURIComponent(
+              props.articles[0].sectionName
+            )}`}>
+            <a>More on {props.articles[0].sectionName} &gt;</a>
           </Link>
-        ))}
-    </div>
+        </div>
+      )}
+    </>
   )
 }
+
+ArticlesGrid.defaultProps = {
+  limit: 50
+}
+
+export default ArticlesGrid
