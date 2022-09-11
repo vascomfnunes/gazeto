@@ -1,5 +1,6 @@
 import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
 import Header from '@/components/Header/Header'
+import Loader from '@/components/Loader/Loader'
 import Link from 'node_modules/next/link'
 import useSWR from 'node_modules/swr/dist/index'
 import styles from './frontpage.module.scss'
@@ -13,7 +14,7 @@ export default function Home(): JSX.Element {
     <div>
       <Header />
 
-      {!data && <p>Loading the front page...</p>}
+      {!data && <Loader />}
 
       {error && <p>Error fetching the front page!</p>}
 
