@@ -1,9 +1,10 @@
-@import '../../../styles/variables.scss';
+@import '../../../styles/variables';
 
 .section-title {
   color: $red;
-  font-size: 0.9rem;
-  text-transform: uppercase;
   font-family: $sans-serif;
+  font-size: 0.9rem;
   margin: 2rem 0 0;
+  text-transform: uppercase;
 }
+
