@@ -37,18 +37,26 @@ export default function Article(): JSX.Element {
             <div className={styles['article']}>
               <span className={styles.section}>{content.sectionName}</span>
               <h1 className={styles['title']}>{content.fields.headline}</h1>
-              <div
-                dangerouslySetInnerHTML={{ __html: content.fields.main }}></div>
+              {content.fields.main && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: content.fields.main
+                  }}></div>
+              )}
               <h3
                 className={styles['trail-text']}
                 dangerouslySetInnerHTML={{
                   __html: content.fields.trailText
                 }}></h3>
               <div className={styles['byline']}>
-                <span className={styles['author']}>
-                  {content.fields.byline}
-                </span>
-                <span className={styles.separator}>|</span>
+                {content.fields.byline && (
+                  <>
+                    <span className={styles['author']}>
+                      {content.fields.byline}
+                    </span>
+                    <span className={styles.separator}>|</span>
+                  </>
+                )}
                 <span className={styles['date']}>
                   {formatDateFrom(content.webPublicationDate)}
                 </span>
