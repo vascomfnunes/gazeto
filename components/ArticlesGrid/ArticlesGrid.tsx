@@ -30,9 +30,11 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                         width="250"
                         height="150"
                         layout="responsive"></Image>
-                      <p className={styles['trail-text']}>
-                        {article.fields.trailText}
-                      </p>
+                      <div
+                        className={styles['trail-text']}
+                        dangerouslySetInnerHTML={{
+                          __html: article.fields.trailText
+                        }}></div>
                     </div>
                   </div>
                 </Link>
