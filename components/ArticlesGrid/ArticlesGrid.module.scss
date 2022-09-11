@@ -1,17 +1,17 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 .wrapper {
+  column-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
   justify-content: space-between;
 }
 
 .article {
   background-color: $white;
+  border-bottom: 1px solid $gray;
   transition: 0.3s;
   width: 30%;
-  border-bottom: 1px solid $gray;
 
   &:hover {
     cursor: pointer;
@@ -28,8 +28,8 @@
 
 .title {
   font-family: $serif;
-  font-weight: $bold;
   font-size: 1.6rem;
+  font-weight: $bold;
   line-height: 1.7rem;
   margin: 0;
   padding: 1rem 0;
@@ -39,3 +39,4 @@
   font-size: 1rem;
   line-height: 1.3rem;
 }
+
