@@ -1,4 +1,5 @@
 import Header from '@/components/Header/Header'
+import Loader from '@/components/Loader/Loader'
 import { formatDateFrom } from '@/lib/utils'
 import Link from 'node_modules/next/link'
 import { useRouter } from 'node_modules/next/router'
@@ -26,7 +27,7 @@ export default function Article(): JSX.Element {
     <div>
       <Header />
 
-      {!data && <p>Loading article...</p>}
+      {!data && <Loader />}
 
       {error && <p>Error fetching article!</p>}
 
