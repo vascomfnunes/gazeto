@@ -1,17 +1,18 @@
 @import '../../styles/variables';
 
 .wrapper {
+  align-items: flex-end;
   column-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .article {
   background-color: $white;
   border-bottom: 1px solid $gray;
   transition: 0.3s;
-  width: 30%;
+  width: 31%;
 
   &:hover {
     cursor: pointer;
@@ -40,3 +41,8 @@
   line-height: 1.3rem;
 }
 
+.more-on {
+  font-weight: $bold;
+  padding-top: 1rem;
+  text-align: right;
+}

@@ -1,3 +1,4 @@
+import { Data } from 'interfaces/api'
 import {
   NextApiRequest,
   NextApiResponse
@@ -9,7 +10,7 @@ const handler = async (
 ): Promise<void> => {
   const today = new Date().toISOString().slice(0, 10)
 
-  const groupBy = (items: any[], key: string) =>
+  const groupBy: any = (items: any[], key: string) =>
     items.reduce(
       (
         result: { [x: string]: any },
@@ -24,10 +25,10 @@ const handler = async (
   try {
     const res_1 = await fetch(
       `${process.env.API_BASE_URL}/search?page-size=50&show-fields=headline,` +
-        `trailText,thumbnail&from-date=${today}&to-date=${today}&order-by=relevance` +
+        `trailText,thumbnail&from-date=${today}&to-date=${today}&order-by=newest` +
         `&use-date=newspaper-edition&api-key=${process.env.API_KEY}`
     )
-    let data = await res_1.json()
+    let data: Data = await res_1.json()
 
     // sort by sections and reverse the array
     data = data.response.results

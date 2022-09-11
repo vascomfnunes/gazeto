@@ -18,7 +18,7 @@ export default function Section(): JSX.Element {
       <div className={styles['section-title']}>{router.query.sectionName}</div>
       {!data && <Loader />}
       {error && <p>Error fetching articles!</p>}
-      {data && <ArticlesGrid articles={data.response.results} />}
+      {data && <ArticlesGrid articles={data} />}
     </div>
   )
 }

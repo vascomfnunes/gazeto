@@ -1,3 +1,4 @@
+import { Data } from 'interfaces/api'
 import {
   NextApiRequest,
   NextApiResponse
@@ -13,7 +14,7 @@ const handler = async (
       // `${id}?show-fields=headline,trailText,body,thumbnail&show-elements=all&api-key=${process.env.API_KEY}`
       `${id}?show-fields=all&show-elements=all&api-key=${process.env.API_KEY}`
     )
-    const data = await res_1.json()
+    const data : Data = await res_1.json()
 
     res.status(200).json(data)
   } catch (error) {
