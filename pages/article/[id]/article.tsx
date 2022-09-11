@@ -34,7 +34,7 @@ export default function Article(): JSX.Element {
       <div className={styles['wrapper']}>
         {content && (
           <>
-            <article>
+            <div className={styles['article']}>
               <span className={styles.section}>{content.sectionName}</span>
               <h1 className={styles['title']}>{content.fields.headline}</h1>
               {content.fields.main && (
@@ -64,7 +64,7 @@ export default function Article(): JSX.Element {
               <div
                 className={styles['body']}
                 dangerouslySetInnerHTML={{ __html: content.fields.body }}></div>
-            </article>
+            </div>
             <div className={styles['the-guardian-link']}>
               Read this article on The Guardian:{' '}
               <Link href={content.fields.shortUrl}>
