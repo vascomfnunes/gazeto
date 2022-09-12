@@ -1,4 +1,4 @@
-import Header from '@/components/Header/Header'
+import Header from 'components/Header/Header'
 import Head from 'node_modules/next/head'
 import Image from 'node_modules/next/image'
 import Link from 'node_modules/next/link'
@@ -16,7 +16,7 @@ function Gazeto({ Component, pageProps }): JSX.Element {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header />
+        <Header() />
 
         <main className="container">
           <Component {...pageProps} />

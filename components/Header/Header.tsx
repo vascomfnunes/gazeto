@@ -1,5 +1,4 @@
-import { todayFormattedDate } from '@/lib/utils'
-import Image from 'node_modules/next/image'
+import { todayFormattedDate } from 'lib/utils'
 import Link from 'node_modules/next/link'
 import styles from './Header.module.scss'
 

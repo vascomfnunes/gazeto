@@ -1,5 +1,5 @@
-import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
-import Loader from '@/components/Loader/Loader'
+import ArticlesGrid from 'components/ArticlesGrid/ArticlesGrid'
+import Loader from 'components/Loader/Loader'
 import Link from 'node_modules/next/link'
 import useSWR from 'node_modules/swr/dist/index'
 import styles from './frontpage.module.scss'

@@ -1,5 +1,5 @@
-import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
-import Loader from '@/components/Loader/Loader'
+import ArticlesGrid from 'components/ArticlesGrid/ArticlesGrid'
+import Loader from 'components/Loader/Loader'
 import { useRouter } from 'node_modules/next/router'
 import useSWR from 'node_modules/swr/dist/index'
 import styles from './section.module.scss'
