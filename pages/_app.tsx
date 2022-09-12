@@ -16,7 +16,7 @@ function Gazeto({ Component, pageProps }): JSX.Element {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header() />
+        <Header />
 
         <main className="container">
           <Component {...pageProps} />
