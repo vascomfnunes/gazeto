@@ -11,3 +11,10 @@
   text-transform: uppercase;
 }
 
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    border-bottom: thin solid $orange;
+    border-top: thin solid $orange;
+    color: $orange;
+  }
+}

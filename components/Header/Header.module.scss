@@ -33,3 +33,16 @@
   font-size: 0.8rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background-color: $true-black;
+  }
+
+  .title {
+    color: $orange;
+
+    &:hover {
+      color: $dark-gray;
+    }
+  }
+}

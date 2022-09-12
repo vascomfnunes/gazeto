@@ -60,3 +60,9 @@
   text-align: right;
   text-transform: uppercase;
 }
+
+@media (prefers-color-scheme: dark) {
+  .trail-text {
+    background-color: $true-black;
+  }
+}
