@@ -31,14 +31,16 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                       <h2 className={styles['title']}>
                         {article.fields.headline}
                       </h2>
-                      <img
-                        className={styles['article-img']}
-                        alt={article.fields.title}
-                        loading="lazy"
-                        style={{
-                          backgroundImage: `Url(${article.fields.thumbnail})`
-                        }}
-                      />
+                      {article.fields.thumbnail && (
+                        <img
+                          className={styles['article-img']}
+                          alt={article.fields.title}
+                          loading="lazy"
+                          style={{
+                            backgroundImage: `Url(${article.fields.thumbnail})`
+                          }}
+                        />
+                      )}
 
                       <div
                         className={styles['trail-text']}
@@ -52,7 +54,7 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
         </Masonry>
       </div>
 
-      {props.articles.length > props.limit && (
+      {props.limit < 50 && props.articles.length >= props.limit && (
         <div className={styles['more-on']}>
           <Link
             href={`/section/${

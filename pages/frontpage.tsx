@@ -26,10 +26,10 @@ export default function Home(): JSX.Element {
                       data[key][0].sectionId
                     }?sectionName=${encodeURIComponent(key)}`}
                     key={index}>
-                    <a>{key}</a>
+                    <a>{data[key][0].sectionName}</a>
                   </Link>
                 </div>
-                <ArticlesGrid articles={data[key]} limit={5} />
+                <ArticlesGrid articles={data[key]} limit={6} />
               </div>
             )
           })}

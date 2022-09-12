@@ -10,34 +10,72 @@ const handler = async (
 ): Promise<void> => {
   const today = new Date().toISOString().slice(0, 10)
 
-  const groupBy: any = (items: any[], key: string) =>
-    items.reduce(
-      (
-        result: { [x: string]: any },
-        item: { [x: string]: string | number }
-      ) => ({
-        ...result,
-        [item[key]]: [...(result[item[key]] || []), item]
-      }),
-      {}
-    )
+  const sections = [
+    'uk-news',
+    'world',
+    'us-news',
+    'theguardian',
+    'theobserver',
+    'tv-and-radio',
+    'media',
+    'football',
+    'sport',
+    'technology',
+    'culture',
+    'music',
+    'film',
+    'stage',
+    'books',
+    'games',
+    'artanddesign',
+    'travel',
+    'lifeandstyle',
+    'money',
+    'business',
+    'community',
+    'education',
+    'environment',
+    'fashion',
+    'food',
+    'global-development',
+    'law',
+    'local',
+    'politics',
+    'science',
+    'society',
+    'commentisfree',
+    'extra',
+    'about',
+  ]
 
   try {
-    const res_1 = await fetch(
-      `${process.env.API_BASE_URL}/search?page-size=50&show-fields=headline,` +
-        `trailText,thumbnail&from-date=${today}&to-date=${today}&order-by=newest` +
-        `&use-date=newspaper-edition&api-key=${process.env.API_KEY}`
-    )
-    let data: Data = await res_1.json()
+    let finalData = []
 
-    // sort by sections and reverse the array
-    data = data.response.results
-      .sort((a: { sectionId: number }, b: { sectionId: number }) =>
-        a.sectionId > b.sectionId ? 1 : -1
+    // Fetch articles for each section
+    for (let index = 0; index < sections.length; index++) {
+      let res_2 = await fetch(
+        `${process.env.API_BASE_URL}/search?page-size=6&section=${sections[index]}&show-fields=headline,` +
+          `trailText,thumbnail&from-date=${today}&to-date=${today}&order-by=relevance` +
+          `&use-date=newspaper-edition&api-key=${process.env.API_KEY}`
       )
-      .reverse()
-    // return results grouped by sections
-    res.status(200).json(groupBy(data, 'sectionName'))
+
+      let response: any = await res_2.json()
+
+      if (response.response.results.length > 0) {
+        response = response.response.results
+          .sort(
+            (
+              a: { webPublicationDate: string },
+              b: { webPublicationDate: string }
+            ): 1 | -1 => (a.webPublicationDate > b.webPublicationDate ? 1 : -1)
+          )
+          .reverse()
+
+        finalData.push(response)
+      }
+    }
+    res.setHeader('Cache-Control', 's-maxage=7200')
+    res.status(200).json(finalData)
   } catch (error) {
     res.status(error.status).json(error.response.data)
   }
