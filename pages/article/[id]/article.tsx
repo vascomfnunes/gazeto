@@ -1,5 +1,5 @@
-import Loader from '@/components/Loader/Loader'
-import { formatDateFrom } from '@/lib/utils'
+import Loader from 'components/Loader/Loader'
+import { formatDateFrom } from 'lib/utils'
 import Link from 'node_modules/next/link'
 import { useRouter } from 'node_modules/next/router'
 import useSWR from 'node_modules/swr/dist/index'
