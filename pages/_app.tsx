@@ -39,16 +39,20 @@ function Gazeto({ Component, pageProps }): JSX.Element {
             <Link href="https://open-platform.theguardian.com/">
               <a target="_blank">The Guardian Open Platform.</a>
             </Link>{' '}
-            This site is not affiliated with The Guardian which has the
-            copyright to all the articles content. The terms of use to The
-            Guardian Open Platform can be read{' '}
+            This site is not affiliated with{' '}
+            <i>Guardian News & Media Limited</i> which has the copyright to all
+            the articles content. The terms of use to The Guardian Open Platform
+            can be read{' '}
             <Link href="https://www.theguardian.com/open-platform/terms-and-conditions">
               <a target="_blank">here</a>
             </Link>
             .<br />
             <br />
-            The Gazeto engine is a free, open source project, licensed under the
-            MIT licence. Read more about it{' '}
+            The Gazeto is a free, open source project, licensed under the{' '}
+            <Link href="https://opensource.org/licenses/MIT">
+              <a target="_blank">MIT License</a>
+            </Link>
+            . Read more about it{' '}
             <Link href="https://github.com/vascomfnunes/gazeto">
               <a target="_blank">here</a>
             </Link>

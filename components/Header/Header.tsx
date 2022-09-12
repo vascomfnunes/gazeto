@@ -10,16 +10,6 @@ export default function Header(): JSX.Element {
         <Link href="/">
           <a className={styles['title']}>Gazeto</a>
         </Link>
-        <Link href="https://theguardian.com">
-          <a target="_blank">
-            <Image
-              src="/poweredbyguardian.png"
-              height="30"
-              width="100"
-              alt="Powered by The Guardian"
-            />
-          </a>
-        </Link>
       </div>
       <div className={styles['edition']}>
         UK Edition for {todayFormattedDate()}
