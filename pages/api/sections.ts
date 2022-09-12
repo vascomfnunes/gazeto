@@ -1,4 +1,4 @@
-import { Data } from 'interfaces/api'
+import { Data } from 'lib/interfaces/api'
 import {
   NextApiRequest,
   NextApiResponse
@@ -59,7 +59,7 @@ const handler = async (
           `&use-date=newspaper-edition&api-key=${process.env.API_KEY}`
       )
 
-      let response: any = await res_2.json()
+      let response: Data = await res_2.json()
 
       if (response.response.results.length > 0) {
         response = response.response.results
