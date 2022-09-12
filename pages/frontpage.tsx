@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
                   <Link
                     href={`/section/${
                       data[key][0].sectionId
-                    }?sectionName=${encodeURIComponent(key)}`}
+                    }?sectionName=${encodeURIComponent(data[key][0].sectionName)}`}
                     key={index}>
                     <a>{data[key][0].sectionName}</a>
                   </Link>

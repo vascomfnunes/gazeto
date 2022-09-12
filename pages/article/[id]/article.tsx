@@ -4,6 +4,7 @@ import Link from 'node_modules/next/link'
 import { useRouter } from 'node_modules/next/router'
 import useSWR from 'node_modules/swr/dist/index'
 import { useEffect, useState } from 'react'
+import StarRating from '@rubenvara/react-star-rating'
 import styles from './article.module.scss'
 
 export default function Article(): JSX.Element {
@@ -34,6 +35,9 @@ export default function Article(): JSX.Element {
             <div className={styles['article']}>
               <span className={styles.section}>{content.sectionName}</span>
               <h1 className={styles['title']}>{content.fields.headline}</h1>
+              {content.fields.starRating && (
+                <StarRating rating={parseInt(content.fields.starRating)} />
+              )}
               {content.fields.main && (
                 <div
                   dangerouslySetInnerHTML={{

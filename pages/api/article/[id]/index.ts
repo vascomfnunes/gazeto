@@ -1,4 +1,4 @@
-import { Data } from 'interfaces/api'
+import { Data } from 'lib/interfaces/api'
 import {
   NextApiRequest,
   NextApiResponse
