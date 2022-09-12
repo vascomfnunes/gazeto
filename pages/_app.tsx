@@ -1,3 +1,4 @@
+import Header from '@/components/Header/Header'
 import Head from 'node_modules/next/head'
 import Image from 'node_modules/next/image'
 import Link from 'node_modules/next/link'
@@ -14,6 +15,8 @@ function Gazeto({ Component, pageProps }): JSX.Element {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+
+        <Header />
 
         <main className="container">
           <Component {...pageProps} />
@@ -43,8 +46,18 @@ function Gazeto({ Component, pageProps }): JSX.Element {
               <a target="_blank">here</a>
             </Link>
             .<br />
-            All the content provided is for exclusive personal, non-commercial
-            use.
+            <br />
+            The Gazeto engine is a free, open source project, licensed under the
+            MIT licence. Read more about it{' '}
+            <Link href="https://github.com/vascomfnunes/gazeto">
+              <a target="_blank">here</a>
+            </Link>
+            .<br />
+            <br />
+            <strong>
+              All the data provided by The Guardian Open Platform is for
+              exclusive personal, non-commercial use.
+            </strong>
           </div>
         </footer>
       </FadeIn>

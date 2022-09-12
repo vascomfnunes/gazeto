@@ -5,7 +5,7 @@ export default function Loader(): JSX.Element {
   return (
     <FadeIn>
       <div className="loader">
-        <Spinner color="red" />
+        <Spinner color="#bf0024" />
       </div>
     </FadeIn>
   )

@@ -1,5 +1,4 @@
 import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
-import Header from '@/components/Header/Header'
 import Loader from '@/components/Loader/Loader'
 import Link from 'node_modules/next/link'
 import useSWR from 'node_modules/swr/dist/index'
@@ -11,30 +10,30 @@ export default function Home(): JSX.Element {
   )
 
   return (
-    <div>
-      <Header />
+    <>
+      <div>
+        {!data && <Loader />}
 
-      {!data && <Loader />}
+        {error && <p>Error fetching the front page!</p>}
 
-      {error && <p>Error fetching the front page!</p>}
-
-      {data &&
-        Object.keys(data).map((key, index) => {
-          return (
-            <div key={index}>
-              <div className={styles['section-title']}>
-                <Link
-                  href={`/section/${
-                    data[key][0].sectionId
-                  }?sectionName=${encodeURIComponent(key)}`}
-                  key={index}>
-                  <a>{key}</a>
-                </Link>
+        {data &&
+          Object.keys(data).map((key, index) => {
+            return (
+              <div key={index}>
+                <div className={styles['section-title']}>
+                  <Link
+                    href={`/section/${
+                      data[key][0].sectionId
+                    }?sectionName=${encodeURIComponent(key)}`}
+                    key={index}>
+                    <a>{key}</a>
+                  </Link>
+                </div>
+                <ArticlesGrid articles={data[key]} limit={5} />
               </div>
-              <ArticlesGrid articles={data[key]} limit={5} />
-            </div>
-          )
-        })}
-    </div>
+            )
+          })}
+      </div>
+    </>
   )
 }

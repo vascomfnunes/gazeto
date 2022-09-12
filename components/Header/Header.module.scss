@@ -1,16 +1,16 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 .wrapper {
-  text-align: center;
-  padding: 1rem 0 2rem;
+  background-color: #eee;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid $gray;
+  padding: 1rem 0;
+  text-align: center;
 
   .logos {
+    align-items: flex-end;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
   }
 }
 
@@ -18,10 +18,10 @@
   color: $red;
   font-size: 2.5rem;
   font-weight: $bold;
-  transition: 0.3s;
-  text-align: center;
   line-height: 3.1rem;
   padding-right: 0.5rem;
+  text-align: center;
+  transition: 0.3s;
 
   &:hover {
     color: $black;
@@ -29,6 +29,7 @@
 }
 
 .edition {
-  font-size: 0.8rem;
   color: $dark-gray;
+  font-size: 0.8rem;
 }
+

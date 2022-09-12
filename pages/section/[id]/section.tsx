@@ -1,5 +1,4 @@
 import ArticlesGrid from '@/components/ArticlesGrid/ArticlesGrid'
-import Header from '@/components/Header/Header'
 import Loader from '@/components/Loader/Loader'
 import { useRouter } from 'node_modules/next/router'
 import useSWR from 'node_modules/swr/dist/index'
@@ -14,7 +13,6 @@ export default function Section(): JSX.Element {
 
   return (
     <div>
-      <Header />
       <div className={styles['section-title']}>{router.query.sectionName}</div>
       {!data && <Loader />}
       {error && <p>Error fetching articles!</p>}
