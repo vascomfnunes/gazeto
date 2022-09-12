@@ -53,3 +53,25 @@ footer {
   justify-content: center;
   transition: 0.5s;
 }
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #1f1e1e;
+    color: #aaa;
+  }
+
+  a {
+    color: #ffa500;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #666;
+  }
+
+  footer {
+    background-color: #000;
+  }
+}

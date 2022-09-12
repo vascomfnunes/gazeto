@@ -118,3 +118,13 @@
     margin: 4rem 6rem auto;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .article {
+    .byline {
+      .author {
+        color: $orange;
+      }
+    }
+  }
+}
