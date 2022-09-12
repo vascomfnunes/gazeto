@@ -19,6 +19,12 @@ export default function Article(): JSX.Element {
   useEffect(() => {
     if (data) {
       console.log(data)
+
+      const isRead = localStorage.getItem(data.response.content.id)
+      if (!isRead) {
+        localStorage.setItem(data.response.content.id, 'true')
+      }
+
       setContent(data.response.content)
     }
   }, [data])
