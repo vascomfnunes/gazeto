@@ -1,50 +1,62 @@
 @import '../../styles/variables';
 
-.wrapper {
-  column-gap: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .article {
-  align-content: space-between;
-  background-color: $white;
-  border-bottom: 1px solid $gray;
+  align-content: stretch;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  min-height: 520px;
   transition: 0.3s;
-  width: 31%;
 
   &:hover {
     cursor: pointer;
   }
 
-  @media only screen and (min-width: 591px) and (max-width: 960px) {
-    width: 47%;
-  }
-
   @media only screen and (max-width: 590px) {
-    width: 100%;
+    min-height: 450px;
+  }
+}
+
+.article-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1;
+  height: 250px;
+  min-height: 250px;
+  overflow: hide;
+  width: 100% !important;
+}
+
+.masonry {
+  div:first-child {
+    div:first-child {
+      flex: 2 1 0% !important;
+    }
   }
 }
 
 .title {
   font-family: $serif;
-  font-size: 1.6rem;
+  font-size: 1.5em;
   font-weight: $bold;
   line-height: 1.7rem;
-  margin: 0;
-  padding: 1rem 0;
+  margin: 0 0 1rem;
 }
 
 .trail-text {
-  font-size: 1rem;
-  line-height: 1.3rem;
-  margin: 1rem 0;
+  background-color: #eee;
+  flex: 0;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  padding: 1rem;
 }
 
 .more-on {
+  font-size: 0.8rem;
   font-weight: $bold;
-  padding-top: 1rem;
+  padding: 0.5rem 0;
   text-align: right;
+  text-transform: uppercase;
 }

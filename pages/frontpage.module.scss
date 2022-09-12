@@ -1,10 +1,13 @@
 @import '../styles/variables';
 
 .section-title {
+  border-bottom: thin solid $red;
+  border-top: thin solid $red;
   color: $red;
   font-family: $sans-serif;
   font-size: 0.9rem;
-  margin: 2rem 0 0;
+  margin: 2rem 0 1rem;
+  padding: 0.5rem 0;
   text-transform: uppercase;
 }
 
