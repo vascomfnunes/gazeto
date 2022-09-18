@@ -66,7 +66,7 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
         </Masonry>
       </div>
 
-      {props.limit < 50 && props.articles.length >= props.limit && (
+      {props.limit < 50 && props.articles.length > props.limit && (
         <div className={styles['more-on']}>
           <Link
             href={`/section/${
@@ -74,7 +74,7 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
             }?sectionName=${encodeURIComponent(
               props.articles[0].sectionName
             )}`}>
-            <a>More on {props.articles[0].sectionName} &gt;</a>
+            <a>More {props.articles[0].sectionName} &gt;</a>
           </Link>
         </div>
       )}

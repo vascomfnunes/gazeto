@@ -37,8 +37,8 @@
 
   .byline {
     align-items: center;
-    border-bottom: 1px solid $gray;
-    border-top: 1px solid $gray;
+    border-bottom: 0.5px solid $gray;
+    border-top: 0.5px solid $gray;
     display: flex;
     font-family: $sans-serif;
     font-size: 0.8rem;
@@ -71,7 +71,7 @@
   }
 
   .trail-text {
-    margin: 3rem 0 1rem;
+    margin: 2rem 0 1rem;
 
     p {
       font-size: 1.2rem;
@@ -81,7 +81,7 @@
 }
 
 .body {
-  padding-top: 2rem;
+  padding-top: 1rem;
 
   p {
     font-size: 1.1rem;
@@ -106,7 +106,7 @@
   }
 
   @media only screen and (min-width: 590px) {
-    margin: 2rem 6rem auto;
+    margin: 1rem 6rem auto;
   }
 }
 

@@ -1,9 +1,17 @@
 @import '../styles/variables';
 
 .section-title {
+  border-top: 0.5px solid $black;
   color: $red;
   font-family: $sans-serif;
   font-size: 1.5rem;
   margin: 1rem 0;
+  padding-top: 1rem;
   text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    border-top: 0.5px solid $white;
+  }
 }
