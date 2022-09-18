@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'node_modules/next/image'
 import Link from 'node_modules/next/link'
 import Masonry from 'node_modules/react-smart-masonry'
 import { FunctionComponent, useEffect, useState } from 'react'
@@ -41,14 +42,16 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                     <div className={article.read ? styles['read'] : ''}>
                       <div className={styles['article']}>
                         {article.fields.thumbnail && (
-                          <img
-                            className={styles['article-img']}
-                            alt={article.fields.title}
-                            loading="lazy"
-                            style={{
-                              backgroundImage: `Url(${article.fields.thumbnail})`
-                            }}
-                          />
+                          <div className={styles['img-container']}>
+                            <Image
+                              src={article.fields.thumbnail}
+                              alt={article.fields.headline}
+                              className={styles['article-img']}
+                              layout="fill"
+                              objectFit="cover"
+                              objectPosition="center"
+                            />
+                          </div>
                         )}
                         <h2
                           data-testid="article-headline"

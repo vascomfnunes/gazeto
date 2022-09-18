@@ -1,10 +1,8 @@
 @import '../../styles/variables';
 
 .article {
-  align-content: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 420px;
   transition: 0.3s;
 
@@ -17,6 +15,10 @@
   }
 }
 
+.img-container {
+  position: relative;
+}
+
 .read {
   opacity: 0.5;
 }
@@ -27,10 +29,6 @@
   background-size: cover;
   border-radius: 8px;
   flex: 1;
-  height: 150px;
-  min-height: 150px;
-  overflow: hidden;
-  width: 100% !important;
 }
 
 .masonry {
@@ -49,24 +47,10 @@
   margin: 1rem 0;
 }
 
-.trail-text {
-  background-color: #eee;
-  flex: 0;
-  font-size: 0.9rem;
-  line-height: 1.1rem;
-  padding: 1rem;
-}
-
 .more-on {
   font-size: 0.8rem;
   font-weight: $bold;
   padding: 0.5rem 0;
   text-align: right;
   text-transform: uppercase;
-}
-
-@media (prefers-color-scheme: dark) {
-  .trail-text {
-    background-color: $true-black;
-  }
 }
