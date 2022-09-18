@@ -57,14 +57,8 @@ footer {
 @media (prefers-color-scheme: dark) {
   html,
   body {
-    background-color: #1f1e1e;
-    color: #aaa;
-  }
-
-  a {
-    color: #ffa500;
-    text-decoration: none;
-    transition: 0.3s;
+    background-color: #000;
+    color: #fff;
   }
 
   a:hover {
@@ -72,6 +66,6 @@ footer {
   }
 
   footer {
-    background-color: #000;
+    background-color: #3b3b3b;
   }
 }

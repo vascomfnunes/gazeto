@@ -5,11 +5,9 @@ import styles from './Header.module.scss'
 export default function Header(): JSX.Element {
   return (
     <div className={styles['wrapper']}>
-      <div className={styles['logos']}>
-        <Link href="/">
-          <a className={styles['title']}>Gazeto</a>
-        </Link>
-      </div>
+      <Link href="/">
+        <a className={styles['title']}>Gazeto</a>
+      </Link>
       <div className={styles['edition']}>
         UK Edition for {todayFormattedDate()}
       </div>

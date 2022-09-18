@@ -81,7 +81,7 @@
 }
 
 .body {
-  padding-top: 1rem;
+  padding-top: 2rem;
 
   p {
     font-size: 1.1rem;
@@ -106,7 +106,7 @@
   }
 
   @media only screen and (min-width: 590px) {
-    margin: 4rem 6rem auto;
+    margin: 2rem 6rem auto;
   }
 }
 
@@ -115,16 +115,6 @@
   padding-top: 1rem;
 
   @media only screen and (min-width: 590px) {
-    margin: 4rem 6rem auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .article {
-    .byline {
-      .author {
-        color: $orange;
-      }
-    }
+    margin: 2rem 6rem auto;
   }
 }

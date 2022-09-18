@@ -19,7 +19,7 @@ const handler = async (
     res.setHeader('Cache-Control', 's-maxage=7200');
     res.status(200).json(data)
   } catch (error) {
-    res.status(error.status).json(error.response.data)
+    res.status(error.status).json(error.message)
   }
 }
 
