@@ -54,7 +54,7 @@ const handler = async (
     // Fetch articles for each section
     for (let index = 0; index < sections.length; index++) {
       let res_2 = await fetch(
-        `${process.env.API_BASE_URL}/search?page-size=6&section=${sections[index]}&show-fields=headline,` +
+        `${process.env.API_BASE_URL}/search?page-size=7&section=${sections[index]}&show-fields=headline,` +
           `trailText,thumbnail&from-date=${today}&to-date=${today}&order-by=relevance` +
           `&use-date=newspaper-edition&api-key=${process.env.API_KEY}`
       )

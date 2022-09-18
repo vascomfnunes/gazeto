@@ -40,6 +40,7 @@ a:hover {
 footer {
   background-color: #ddd;
   border-top: 1px solid #eee;
+  font-family: 'Lato', sans-serif;
   font-size: 0.8rem;
   margin: 2rem auto 0;
   padding: 2rem 3rem;
