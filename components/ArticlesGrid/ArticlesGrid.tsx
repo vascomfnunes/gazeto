@@ -14,11 +14,12 @@ const breakpoints = { mobile: 0, tablet: 593, desktop: 890 }
 const ArticlesGrid: FunctionComponent<IProps> = (props) => {
   const [ready, setReady] = useState(false)
 
+  // Set already read articles from local storage
   useEffect(() => {
     props.articles.forEach(function (article: any) {
       article.read = localStorage.getItem(article.id) === 'true'
     })
-    console.log(props.articles)
+
     setReady(true)
   }, [props.articles])
 
@@ -39,9 +40,6 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                     href={`/article/${encodeURIComponent(article.apiUrl)}`}>
                     <div className={article.read ? styles['read'] : ''}>
                       <div className={styles['article']}>
-                        <h2 className={styles['title']}>
-                          {article.fields.headline}
-                        </h2>
                         {article.fields.thumbnail && (
                           <img
                             className={styles['article-img']}
@@ -52,12 +50,11 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                             }}
                           />
                         )}
-
-                        <div
-                          className={styles['trail-text']}
-                          dangerouslySetInnerHTML={{
-                            __html: article.fields.trailText
-                          }}></div>
+                        <h2
+                          data-testid="article-headline"
+                          className={styles['title']}>
+                          {article.fields.headline}
+                        </h2>
                       </div>
                     </div>
                   </Link>
