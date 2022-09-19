@@ -3,6 +3,11 @@ import Head from 'node_modules/next/head'
 import Image from 'node_modules/next/image'
 import Link from 'node_modules/next/link'
 import FadeIn from 'node_modules/react-fade-in/lib/FadeIn'
+import {
+  ToastContainer,
+  toast
+} from 'node_modules/react-toastify/dist/react-toastify'
+import 'node_modules/react-toastify/dist/ReactToastify.css'
 import '../styles/globals.css'
 
 function Gazeto({ Component, pageProps }): JSX.Element {
@@ -19,6 +24,7 @@ function Gazeto({ Component, pageProps }): JSX.Element {
         <Header />
 
         <main className="container">
+          <ToastContainer />
           <Component {...pageProps} />
         </main>
 
@@ -40,8 +46,8 @@ function Gazeto({ Component, pageProps }): JSX.Element {
             <a target="_blank">The Guardian Open Platform.</a>
           </Link>{' '}
           This site is not affiliated with <i>Guardian News & Media Limited</i>{' '}
-          which has the copyright to all the articles&apos; content. The terms of use
-          to The Guardian Open Platform can be read{' '}
+          which has the copyright to all the articles&apos; content. The terms
+          of use to The Guardian Open Platform can be read{' '}
           <Link href="https://www.theguardian.com/open-platform/terms-and-conditions">
             <a target="_blank">here</a>
           </Link>

@@ -11,7 +11,6 @@ const handler = async (
   const id = req.query.id as string
   try {
     const res_1 = await fetch(
-      // `${id}?show-fields=headline,trailText,body,thumbnail&show-elements=all&api-key=${process.env.API_KEY}`
       `${id}?show-fields=all&show-elements=all&api-key=${process.env.API_KEY}`
     )
     const data : Data = await res_1.json()

@@ -1,31 +1,37 @@
+import StarRating from '@rubenvara/react-star-rating'
 import Loader from 'components/Loader/Loader'
+import { fetcher } from 'lib/api'
 import { formatDateFrom } from 'lib/utils'
 import Link from 'node_modules/next/link'
 import { useRouter } from 'node_modules/next/router'
+import { toast } from 'node_modules/react-toastify/dist/react-toastify'
 import useSWR from 'node_modules/swr/dist/index'
 import { useEffect, useState } from 'react'
-import StarRating from '@rubenvara/react-star-rating'
 import styles from './article.module.scss'
 
 export default function Article(): JSX.Element {
   const router = useRouter()
   const id = router.query.id as any
+
   const { data, error } = useSWR(
-    `/api/article/${encodeURIComponent(id)}`,
-    (apiURL: string) => fetch(apiURL).then((res) => res.json())
+    () => `/api/article/${encodeURIComponent(id)}`,
+    fetcher
   )
   const [content, setContent]: any = useState()
 
   useEffect(() => {
     if (data) {
-      console.log(data)
+      try {
+        const isRead = localStorage.getItem(data.response.content.id)
 
-      const isRead = localStorage.getItem(data.response.content.id)
-      if (!isRead) {
-        localStorage.setItem(data.response.content.id, 'true')
+        if (!isRead) {
+          localStorage.setItem(data.response.content.id, 'true')
+        }
+
+        setContent(data.response.content)
+      } catch (error) {
+        //
       }
-
-      setContent(data.response.content)
     }
   }, [data])
 
