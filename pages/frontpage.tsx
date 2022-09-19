@@ -1,14 +1,13 @@
 import ArticlesGrid from 'components/ArticlesGrid/ArticlesGrid'
 import Loader from 'components/Loader/Loader'
+import { fetcher } from 'lib/api'
 import Link from 'node_modules/next/link'
 import useSWR from 'node_modules/swr/dist/index'
 import { useEffect } from 'react'
 import styles from './frontpage.module.scss'
 
 export default function Home(): JSX.Element {
-  const { data, error } = useSWR('/api/sections', (apiURL: string) =>
-    fetch(apiURL).then((res) => res.json())
-  )
+  const { data, error } = useSWR('/api/sections', fetcher)
 
   useEffect(() => {
     // Check if localStorage needs to be wiped

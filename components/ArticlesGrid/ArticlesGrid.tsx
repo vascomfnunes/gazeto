@@ -24,6 +24,12 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
     setReady(true)
   }, [props.articles])
 
+  const getImage = (image: string) => {
+    if (!image) return undefined
+
+    return image.replace('500.jpg', '1000.jpg')
+  }
+
   return (
     <>
       <div className={styles['masonry']}>
@@ -41,15 +47,19 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                     href={`/article/${encodeURIComponent(article.apiUrl)}`}>
                     <div className={article.read ? styles['read'] : ''}>
                       <div className={styles['article']}>
-                        {article.fields.thumbnail && (
+                        {getImage(article.fields.thumbnail) && (
                           <div className={styles['img-container']}>
                             <Image
-                              src={article.fields.thumbnail}
+                              src={article.fields.thumbnail.replace(
+                                '500.jpg',
+                                '1000.jpg'
+                              )}
                               alt={article.fields.headline}
                               className={styles['article-img']}
                               layout="fill"
                               objectFit="cover"
                               objectPosition="center"
+                              priority
                             />
                           </div>
                         )}
