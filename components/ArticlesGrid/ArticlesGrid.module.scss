@@ -34,7 +34,23 @@
 .masonry {
   div:first-child {
     div:first-child {
-      flex: 2 1 0% !important;
+      flex: 3 1 0% !important;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    div:first-child {
+      div:first-child {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    div:first-child {
+      div:first-child {
+        flex: 1 1 0% !important;
+      }
     }
   }
 }
@@ -55,4 +71,3 @@
   text-align: right;
   text-transform: uppercase;
 }
-

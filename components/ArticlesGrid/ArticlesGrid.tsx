@@ -10,7 +10,7 @@ interface IProps {
   limit?: number
 }
 
-const breakpoints = { mobile: 0, tablet: 593, desktop: 890 }
+const breakpoints = { mobile: 376, tablet: 593, desktop: 890 }
 
 const ArticlesGrid: FunctionComponent<IProps> = (props) => {
   const [ready, setReady] = useState(false)
@@ -24,6 +24,11 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
     setReady(true)
   }, [props.articles])
 
+  /**
+   *  Replaces low resolution image
+   * @param image - image URL
+   * @returns
+   */
   const getImage = (image: string) => {
     if (!image) return undefined
 
@@ -35,7 +40,7 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
       <div className={styles['masonry']}>
         <Masonry
           breakpoints={breakpoints}
-          columns={{ mobile: 1, tablet: 2, desktop: 3 }}
+          columns={{ mobile: 2, tablet: 2, desktop: 3 }}
           autoArrange
           gap={24}>
           {ready &&
