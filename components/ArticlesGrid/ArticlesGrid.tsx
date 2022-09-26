@@ -65,6 +65,7 @@ const ArticlesGrid: FunctionComponent<IProps> = (props) => {
                               objectFit="cover"
                               objectPosition="center"
                               priority
+                              unoptimized
                             />
                           </div>
                         )}

@@ -36,6 +36,7 @@ function Gazeto({ Component, pageProps }): JSX.Element {
                 height="30"
                 width="100"
                 alt="Powered by The Guardian"
+                unoptimized
               />
             </a>
           </Link>
