@@ -1,7 +1,7 @@
 import StarRating from '@rubenvara/react-star-rating'
 import Loader from 'components/Loader/Loader'
 import { fetcher } from 'lib/api'
-import { formatDateFrom } from 'lib/utils'
+import { formatDateFrom, replaceInteractiveContent } from 'lib/utils'
 import Link from 'node_modules/next/link'
 import { useRouter } from 'node_modules/next/router'
 import { toast } from 'node_modules/react-toastify/dist/react-toastify'
@@ -21,6 +21,7 @@ export default function Article(): JSX.Element {
 
   useEffect(() => {
     if (data) {
+      // Set article as read
       try {
         const isRead = localStorage.getItem(data.response.content.id)
 
@@ -76,7 +77,9 @@ export default function Article(): JSX.Element {
               </div>
               <div
                 className={styles['body']}
-                dangerouslySetInnerHTML={{ __html: content.fields.body }}></div>
+                dangerouslySetInnerHTML={{
+                  __html: replaceInteractiveContent(content.fields.body)
+                }}></div>
             </div>
             <div className={styles['the-guardian-link']}>
               Read this article on The Guardian:{' '}
