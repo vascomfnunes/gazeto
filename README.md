@@ -1,8 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gazeto
+
+![https://github.com/vascomfnunes/gazeto/blob/main/public/shot.png](https://github.com/vascomfnunes/gazeto/blob/main/public/shot.png)
+
+This is a [Next.js](https://nextjs.org/) project that fetches the current daily
+UK edition from The Guardian's Open Platform API and tries to make it an
+enjoyable
+reading experience.
+
+## Features
+
+- Frontpage with highlights from each news's section
+- Read any article, with full content
+- Remembers read articles, using local storage
+- Fully responsive
+- Auto dark mode support (only tested on macOS/iOS devices)
 
 ## Getting Started
 
-First, run the development server:
+To run this project, a Guardian's Open Platform API key is required. That
+can be requested [here](https://open-platform.theguardian.com/).
+
+Then just clone the provided `.env.sample` file into any environment you want.
+For example, `.env.development`. Edit the file and include your own API key in
+there.
+
+Next, following the example, run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +32,35 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Customizing sections
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+You can pick only the news sections you want to retrieve editing the file
+`pages/api/section.ts` and commenting out the sections you don't want to use.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Unit tests
 
-## Learn More
+Unit tests can be run with:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Disclaimer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is not affiliated in any way with Guardian News & Media Limited
+which has the copyright to all the article's content. The terms of usage of
+The Guardian
+Open Platform
+can be read
+[here](https://www.theguardian.com/open-platform/terms-and-conditions).
 
-## Deploy on Vercel
+All the data provided by The Guardian Open Platform is for exclusive personal,
+non-comercial use.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This code is licensed under the MIT license. For more information please
+refer
+to the [LICENSE](https://github.com/vascomfnunes/tmux-clima/blob/main/LICENSE) file.
