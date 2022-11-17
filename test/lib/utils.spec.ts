@@ -37,7 +37,7 @@ describe('Utils', () => {
           '<figure class="interactive"><a href="some_link">link</a></figure>'
         )
       ).toEqual(
-        '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><iframe class="interactive" src="some_link"></iframe></body></html>'
+        '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><iframe class="interactive" src="some_link" height="100%"></iframe></body></html>'
       )
     })
   })
